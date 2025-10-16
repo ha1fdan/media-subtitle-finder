@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "Media & Subtitles Finder",
+  "version": "1.1",
+  "description": "Show MPD, M3U8, subtitles, and (optional) HLS segments detected in network traffic for the current tab. Includes export, copy-all, and clear.",
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "tabs",
+    "storage",
+    "downloads",
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "Media & Subtitles"
+  },
+  "icons": {
+    "48": "icon.png"
+  }
+}

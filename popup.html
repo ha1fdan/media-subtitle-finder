@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Media & Subtitles</title>
+    <style>
+        body {
+            font-family: system-ui, Arial;
+            width: 480px;
+            padding: 10px;
+        }
+        
+        h1 {
+            font-size: 16px;
+            margin: 0 0 8px;
+        }
+        
+        .row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .item {
+            padding: 8px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            gap: 8px;
+            align-items: flex-start;
+        }
+        
+        .meta {
+            font-size: 12px;
+            color: #555;
+        }
+        
+        .url {
+            font-size: 13px;
+            word-break: break-all;
+        }
+        
+        button {
+            padding: 6px 8px;
+            font-size: 12px;
+        }
+        
+        .empty {
+            color: #666;
+            margin-top: 12px;
+        }
+        
+        .controls {
+            display: flex;
+            gap: 6px;
+            margin-left: auto;
+        }
+        
+        label {
+            font-size: 12px;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .badge {
+            font-size: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 2px 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Media & Subtitles (current tab)</h1>
+    <div class="row">
+        <label><input type="checkbox" id="filterDomain" /> Only this domain</label>
+        <label><input type="checkbox" id="includeSegments" /> Include HLS segments (.ts/.m4s)</label>
+        <label><input type="checkbox" id="includeSubtitles" /> Include subtitles (.vtt/.srt/.ttml)</label>
+        <span id="domain" class="badge"></span>
+        <div style="margin-left:auto; display:flex; gap:6px;">
+            <button id="copyAll">Copy all</button>
+            <button id="exportBtn">Export .txt</button>
+            <button id="clearBtn">Clear</button>
+        </div>
+    </div>
+    <div id="list"></div>
+    <div id="empty" class="empty">No items observed yet.</div>
+    <script src="popup.js"></script>
+</body>
+
+</html>
